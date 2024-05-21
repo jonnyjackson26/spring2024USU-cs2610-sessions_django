@@ -1,0 +1,27 @@
+{% extends 'core/generic.html' %}
+{% block title %}Destinations - Jonny Jackson{% endblock %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'core/destinationStyles.css' %}">
+{% endblock %}
+
+<!--top bar-->
+{% block firstLinkInTopBar %}<a href="{{topBarInfo.0}}">{{topBarInfo.1}}</a>{% endblock %}
+{% block secondLinkInTopBar %}<a href="{{topBarInfo.2}}">{{topBarInfo.3}}</a>{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="container">
+    <h1>Destinations - A project by Jonny Jackson</h1>
+    {% for destination in destinations %}
+    <div class="destinationBox">
+        <h3 class="destinationTitle">{{destination.name}}</h3>
+        <p class="destinationReview">{{destination.review}}</p>
+        <p class="destinationReview">Reviewed a {{destination.rating}} by {{destination.whoPosted}}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

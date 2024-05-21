@@ -1,0 +1,24 @@
+{% extends 'core/generic.html' %}
+{% block title %}Sign in{% endblock %}
+
+<!--top bar-->
+{% block firstLinkInTopBar %}<a href="{{topBarInfo.0}}">{{topBarInfo.1}}</a>{% endblock %}
+{% block secondLinkInTopBar %}<a href="{{topBarInfo.2}}">{{topBarInfo.3}}</a>{% endblock %}
+
+{%block content %}
+
+<div class="container">
+    <form action="/sessions/" method="post">
+        <label for="email">
+            Email
+            <input type="text" name="email">
+        </label>
+        <label for="pw">
+            Password
+            <input type="password" name="pw">
+        </label>
+        <button>Sign in</button>
+    </form>
+</div>
+
+{% endblock %}

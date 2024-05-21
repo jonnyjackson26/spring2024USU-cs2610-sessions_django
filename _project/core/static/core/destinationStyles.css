@@ -1,0 +1,16 @@
+.destinationBox {
+    border: 1px solid gray;
+    border-radius: 15px;
+    width: 100%;
+    background-color: darksalmon;
+    padding: 10px;
+    margin: 10px;
+}
+
+.destinationReview {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.destinationTitle {
+    font-size: 2rem;
+}

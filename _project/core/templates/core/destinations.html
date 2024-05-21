@@ -1,0 +1,33 @@
+{% extends 'core/generic.html' %}
+{% block title %}Destinations{% endblock %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'core/destinationStyles.css' %}">
+{% endblock %}
+
+<!--top bar-->
+{% block firstLinkInTopBar %}<a href="{{topBarInfo.0}}">{{topBarInfo.1}}</a>{% endblock %}
+{% block secondLinkInTopBar %}<a href="{{topBarInfo.2}}">{{topBarInfo.3}}</a>{% endblock %}
+
+{%block content %}
+
+<div class="container">
+    <h1>DESTINATIONS</h1>
+    <a href="/createDestination/">Create New Destination</a>
+
+    {% for destination in destinations %}
+    <div class="destinationBox">
+        <h3 class="destinationTitle"><a href="/destinations/{{destination.id}}/">{{destination.name}}</a></h3>
+        <p class="destinationReview">{{destination.review}}</p>
+        <p class="destinationRating">{{destination.rating}}</p>
+        {% if destination.share_publicly %}
+        <p>Shared publicly</p>
+        {% else %}
+        <p>Private</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

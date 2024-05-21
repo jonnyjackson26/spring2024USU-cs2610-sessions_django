@@ -1,0 +1,28 @@
+{% extends 'core/generic.html' %}
+{% block title %}Sign up{% endblock %}
+
+<!--top bar-->
+{% block firstLinkInTopBar %}<a href="{{topBarInfo.0}}">{{topBarInfo.1}}</a>{% endblock %}
+{% block secondLinkInTopBar %}<a href="{{topBarInfo.2}}">{{topBarInfo.3}}</a>{% endblock %}
+
+{%block content %}
+
+<div class="container">
+    <form action="/users/" method="post">
+        <label for="name">
+            Name
+            <input type="text" name="name">
+        </label>
+        <label for="email">
+            Email
+            <input type="text" name="email">
+        </label>
+        <label for="pw">
+            Password
+            <input type="password" name="pw"> <!--name="" is not right.-->
+        </label>
+        <button>Create Account</button>
+    </form>
+</div>
+
+{% endblock %}
